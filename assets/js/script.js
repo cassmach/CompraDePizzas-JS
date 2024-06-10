@@ -213,3 +213,44 @@ function updateCart () {
         c('aside').style.left = '100vw';
     }
 };
+
+
+
+
+
+                   // Função Adicional para Enviar os dados via whatsapp
+c('.cart--finalizar').addEventListener('click', () => {
+    let message = 'Olá, gostaria de finalizar a compra:\n\n';
+    cart.forEach(item => {
+        let pizzaItem = pizzaJson.find((pizza) => pizza.id == item.id);
+        let pizzaSizeName;
+        switch(item.size) {
+            case 0:
+                pizzaSizeName = 'P';
+                break;
+            case 1:
+                pizzaSizeName = 'M';
+                break;
+            case 2:
+                pizzaSizeName = 'G';
+                break;
+        }
+        let pizzaName = `${pizzaItem.name} (${pizzaSizeName})`;
+        message += `- ${pizzaName} x${item.qt}\n`;
+    });
+
+    let subtotal = 0;
+    cart.forEach(item => {
+        let pizzaItem = pizzaJson.find((pizza) => pizza.id == item.id);
+        subtotal += pizzaItem.price * item.qt;
+    });
+    let desconto = subtotal * 0.1;
+    let total = subtotal - desconto;
+
+    message += `\nSubtotal: R$ ${subtotal.toFixed(2)}`;
+    message += `\nDesconto: R$ ${desconto.toFixed(2)}`;
+    message += `\nTotal: R$ ${total.toFixed(2)}`;
+
+    let encodedMessage = encodeURIComponent(message);
+    window.location.href = `https://wa.me/5551981229406?text=${encodedMessage}`;
+});
