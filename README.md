@@ -3,7 +3,7 @@
 <p align="center">
 Projeto realizado no Curso B7Web para ensino de tecnologias WEB.
 <br>
-Veja ele aqui > https://zertel95.github.io/Projeto-Starbucks/
+Veja ele aqui > https://cassmach.github.io/CompraDePizzas-JS
 </p>
 
 <p align="center">
