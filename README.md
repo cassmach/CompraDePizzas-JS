@@ -13,7 +13,7 @@ Veja ele aqui > https://cassmach.github.io/CompraDePizzas-JS
 </p>
 
 <p align="center">
-  <img alt="projeto devlinks" src=".github/image-nt.jpg">
+  <img alt="projeto pizza food" src=".github/pizza.jpg">
 </p>
 
 <br>
